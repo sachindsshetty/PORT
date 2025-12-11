@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sachin D S - Premium Portfolio</title>
+
+<style>
+    /* BASIC BODY */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    /* FIRE SPARK BACKGROUND */
+    .fire-bg {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255,50,50,0.15), #000);
+        overflow: hidden;
+        z-index: -1;
+    }
+    .spark {
+        position: absolute;
+        width: 4px; height: 4px;
+        background: red;
+        border-radius: 50%;
+        animation: rise 3s linear infinite;
+    }
+    @keyframes rise {
+        from { transform: translateY(0) scale(1); opacity: 1; }
+        to { transform: translateY(-200px) scale(0.3); opacity: 0; }
+    }
+
+    /* HEADER */
+    header {
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(90deg, #ff0000, #550000);
+    }
+
+    .profile-img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        border: 4px solid white;
+        object-fit: cover;
+        box-shadow: 0 0 30px red;
+    }
+
+    /* Typing Animation */
+    #typing {
+        font-size: 24px;
+        white-space: nowrap;
+        border-right: 3px solid white;
+        width: fit-content;
+        margin: auto;
+        overflow: hidden;
+        animation: typing 4s steps(30), blink 0.6s infinite alternate;
+    }
+    @keyframes typing { from { width: 0; } }
+    @keyframes blink { from { border-color: transparent; } to { border-color: white; } }
+
+    /* Glass Section */
+    .section {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 25px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.2);
+        backdrop-filter: blur(6px);
+        transition: 0.3s;
+    }
+    .section:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 25px red;
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-block;
+        padding: 12px 22px;
+        background: #ff3333;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background: white;
+        color: black;
+        transform: scale(1.1);
+    }
+
+    /* Heart Cursor */
+    #heart {
+        position: fixed;
+        font-size: 35px;
+        color: red;
+        pointer-events: none;
+        z-index: 9999;
+        text-shadow: 0 0 15px white;
+        transition: 0.1s;
+    }
+
+    /* Floating Social Bar */
+    .social-bar {
+        position: fixed;
+        top: 40%;
+        left: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 999;
+    }
+    .social-bar a {
+        text-decoration: none;
+        font-size: 25px;
+        background: red;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+    .social-bar a:hover {
+        transform: scale(1.2);
+        background: white;
+        color: red;
+    }
+
+    /* Projects Grid */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .project-card {
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        border-radius: 10px;
+        transition: 0.3s;
+        transform-style: preserve-3d;
+    }
+
+    .project-card:hover {
+        transform: rotateY(12deg) scale(1.05);
+        box-shadow: 0 0 20px red;
+    }
+
+    /* Form */
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        background: black;
+        color: white;
+        border: 1px solid red;
+        margin: 8px 0;
+        border-radius: 6px;
+    }
+
+    /* Back To Top */
+    #topBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: red;
+        color: white;
+        padding: 12px 15px;
+        border-radius: 50%;
+        display: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- FIRE BACKGROUND -->
+<div class="fire-bg" id="fire"></div>
+
+<!-- Heart Cursor -->
+<div id="heart">❤️</div>
+
+<!-- Social Bar with real links -->
+<div class="social-bar">
+    <a href="https://www.linkedin.com/in/sachindsshetty1999?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">🔗</a>
+    <a href="https://github.com/sachindsshetty" target="_blank">💻</a>
+    <a href="https://www.instagram.com/sachin_d_s___?igsh=emF3YjY4eTB1N2hj" target="_blank">📸</a>
+    <a href="mailto:sachin.d.s.shetty11@gmail.com">📧</a>
+</div>
+
+<header>
+    <img src="me.jpg" class="profile-img">
+    <h1>Sachin D S</h1>
+    <div id="typing">Full Stack Developer — Java | React | Spring</div>
+
+    
+    <a href="sachin_resume.pdf" target="_blank" class="btn">View Resume</a>
+
+
+</header>
+
+<!-- ABOUT -->
+<div class="section">
+    <h2>About Me</h2>
+    <p>Full Stack Web Developer | Programming Enthusiast | Tech Explorer.
+
+As someone deeply interested in Full Stack Web Development, I enjoy crafting solutions that merge responsive design with robust backend systems. I specialize in Java, React, JavaScript, HTML, CSS, MySQL, Spring, and Hibernate, enabling me to handle end-to-end application development.
+
+My technical journey has been diverse:
+
+Completed a Diploma in Electronics & Communication.
+
+Earned a PG Diploma in Embedded System Design at Cranes Varsity, strengthening my expertise in hardware–software integration.
+
+Worked as a Trainee Engineer at Rossell Techsys, where I gained professional exposure to aerospace and defense technologies.
+
+Pursued a B.E. in Information Science & Engineering at NIE Mysuru, building advanced skills in software engineering.
+
+Completed a Data Analytics Internship at Technotut Solutions LLP, working with SQL, Excel, and Power BI on real datasets.
+Beyond technology, I believe in collaboration and adaptability. My background has taught me to approach challenges with both technical precision and problem-solving creativity. By blending strong communication skills with technical expertise, I bring a multidimensional approach to every project I take on.
+I thrive in collaborative, fast-paced environments, where I can contribute meaningfully while growing alongside a motivated team.</p>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+    <h2>Skills</h2>
+    <ul>
+        <li>Java, Spring Boot, Hibernate</li>
+        <li>React, JavaScript, HTML, CSS</li>
+        <li>MySQL, Power BI</li>
+        <li>Embedded Systems (Cranes Varsity)</li>
+    </ul>
+</div>
+
+<!-- PROJECTS -->
+<div class="section">
+    <h2>Projects</h2>
+
+    <div class="projects">
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>Fully animated, responsive portfolio using HTML, CSS & JS.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Sign Language Prediction</h3>
+            <p>Real-time gesture recognition using OpenCV & ML models.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Energy Analytics Dashboard</h3>
+            <p>Power BI + SQL based energy consumption insights.</p>
+        </div>
+    </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+    <h2>Experience</h2>
+
+    <h3>Trainee Engineer — Rossell Techsys</h3>
+    <p>Worked with aerospace systems, wiring harness & defense operations.</p>
+
+    <h3>Data Analytics Intern — Technotut Solutions LLP</h3>
+    <p>Analyzed datasets using SQL, Excel, Power BI.</p>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+    <h2>Education</h2>
+
+    <h3>B.E. — Information Science (NIE Mysuru)</h3>
+    <p>CGPA: 8.33</p>
+
+    <h3>PG Diploma — Embedded System Design (Cranes Varsity)</h3>
+    <h3>Diploma — Electronics & Communication (KVG Polytechnic)</h3>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+    <h2>Contact Me</h2>
+
+    <form action="mailto:sachin.d.s.shetty11@gmail.com" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button class="btn">Send Message</button>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer style="text-align:center; padding:20px; background:#111;">© 2025 Sachin D S</footer>
+
+<!-- Back to Top -->
+<div id="topBtn">⬆️</div>
+
+<script>
+/* HEART CURSOR */
+document.addEventListener("mousemove", (e) => {
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+});
+
+/* FIRE SPARK GENERATOR */
+setInterval(() => {
+    const spark = document.createElement("div");
+    spark.classList.add("spark");
+
+    spark.style.left = Math.random() * window.innerWidth + "px";
+    spark.style.top = window.innerHeight + "px";
+
+    document.getElementById("fire").appendChild(spark);
+
+    setTimeout(() => spark.remove(), 3000);
+}, 150);
+
+/* BACK TO TOP */
+const topBtn = document.getElementById("topBtn");
+window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 500 ? "block" : "none";
+});
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+</script>
+
+</body>
+</html>
